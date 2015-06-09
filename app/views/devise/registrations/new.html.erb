@@ -4,7 +4,7 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :phone %><br />
     <%= f.phone_field :phonenum, autofocus: true %>
   </div>
 
@@ -19,6 +19,11 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :area_code %><br />
+    <%= f.text_field :areacode, autocomplete: "off" %>
   </div>
 
   <div class="actions">
