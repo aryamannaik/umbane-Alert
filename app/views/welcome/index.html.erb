@@ -1,2 +1,13 @@
 
-<p>Your area code is <%= current_user.areacode %></p>
+<% if current_user %>
+	<p>Your area code is <%= current_user.areacode %></p>
+	<p>Next outage: <strong><%= @next_outage %></strong></p>
+	<p>Next outage period: <strong><%= @next_outage_period %></strong></p>
+<% else %>
+	<ol>
+	<% 0.upto(15).each do |n| %>
+		<li>Next Outage: <%= @next_outage[n] %><br>
+				Next Outage Period: <%= @next_outage_period[n] %></li>
+	<% end %>
+	</ol>
+<% end %>
