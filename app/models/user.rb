@@ -11,4 +11,6 @@ class User < ActiveRecord::Base
   def email_changed?
     false
   end
+
+  validates_uniqueness_of :email, :allow_blank => true
 end
