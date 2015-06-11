@@ -18,7 +18,6 @@ class WelcomeController < ApplicationController
 			end
 		end
 	end
-	helper_method :sendtext
 	def sendtext
 		@client = Twilio::REST::Client.new account_sid, auth_token
 		from = '+15005550006'
@@ -30,4 +29,6 @@ class WelcomeController < ApplicationController
 			:body => "Next Outage at: #{@next_outage[user.areacode]}\nNext Outage duration: #{next_outage_period[user.areacode]}")
 		end
 	end
+	helper_method :sendtext
+
 end
