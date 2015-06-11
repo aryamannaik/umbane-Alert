@@ -1,12 +1,13 @@
 <% if current_user %>
 	<p>Your area code is <%= current_user.areacode %></p>
-	<p>Next outage: <strong><%= @next_outage %></strong></p>
-	<p>Next outage period: <strong><%= @next_outage_period %></strong></p>
+	<p>Next outage: <strong><%= @load.next_outage %></strong></p>
+	<p>Next outage period: <strong><%= @load.next_outage_period %></strong></p>
 <% else %>
 	<ol>
-	<% 0.upto(15).each do |n| %>
-		<li>Next Outage: <%= @next_outage_arr[n] %><br>
-				Next Outage Period: <%= @next_outage_period_arr[n] %></li>
-	<% end %>
+		<% @loads.each do |ld| %>
+			<p>Area Code: <%= ld.area_code %></p>
+			<p>Next outage: <%= ld.next_outage %></p>
+			<p>Next outage period: <%= ld.next_outage_period %></p>
+		<% end %>
 	</ol>
 <% end %>

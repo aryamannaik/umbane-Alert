@@ -12,7 +12,7 @@ namespace :schedule do
 				# @next_outage_period_arr << results["next_outage_period"]
 				nxtout = results["next_outage"]
 				nxtoutper = results["next_outage_period"]
-				LoadSchedule.create! n, nxtout, nxtoutper
+				LoadSchedule.create!(area_code: n, next_outage: nxtout, next_outage_period: nxtoutper)
 			end
 		end
 	end
