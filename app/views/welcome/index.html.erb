@@ -5,8 +5,8 @@
 <% else %>
 	<ol>
 	<% 0.upto(15).each do |n| %>
-		<li>Next Outage: <%= @next_outage[n] %><br>
-				Next Outage Period: <%= @next_outage_period[n] %></li>
+		<li>Next Outage: <%= @next_outage_arr[n] %><br>
+				Next Outage Period: <%= @next_outage_period_arr[n] %></li>
 	<% end %>
 	</ol>
 <% end %>

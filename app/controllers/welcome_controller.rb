@@ -8,13 +8,13 @@ class WelcomeController < ApplicationController
 			@next_outage = results["next_outage"]
 			@next_outage_period = results["next_outage_period"]
 		else
-			@next_outage = []
-			@next_outage_period = []
+			@next_outage_arr = []
+			@next_outage_period_arr = []
 			1.upto(16).each do |n|
 				response = Typhoeus.get "http://whereismypower.co.za/api/get_next_loadshedding?area=#{n}&stage=3B"
 				results = JSON.parse(response.body)
-				@next_outage << results["next_outage"]
-				@next_outage_period << results["next_outage_period"]
+				@next_outage_arr << results["next_outage"]
+				@next_outage_period_arr << results["next_outage_period"]
 			end
 		end
 	end
@@ -26,9 +26,8 @@ class WelcomeController < ApplicationController
 			client.account.messages.create(
 			:from => from,
 			:to => user.phonenum,
-			:body => "Next Outage at: #{@next_outage[user.areacode]}\nNext Outage duration: #{next_outage_period[user.areacode]}")
+			:body => "Next Outage at: #{@next_outage_arr[user.areacode]}\nNext Outage duration: #{next_outage_period_arr[user.areacode]}")
 		end
 	end
 	helper_method :sendtext
-
 end
