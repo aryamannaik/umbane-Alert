@@ -4,7 +4,10 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :phone %><br />
+    <%= f.label :phone %>
+    <% if 9 %>
+    <em>(Enter complete number starting with +27)</em>
+    <% end %><br />
     <%= f.phone_field :phonenum, autofocus: true %>
   </div>
 

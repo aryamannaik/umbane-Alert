@@ -1,13 +1,180 @@
-<% if current_user %>
-	<p>Your area code is <%= current_user.areacode %></p>
-	<p>Next outage: <strong><%= @load.next_outage %></strong></p>
-	<p>Next outage period: <strong><%= @load.next_outage_period %></strong></p>
-<% else %>
-	<ol>
-		<% @loads.each do |ld| %>
-			<p>Area Code: <%= ld.area_code %></p>
-			<p>Next outage: <%= ld.next_outage %></p>
-			<p>Next outage period: <%= ld.next_outage_period %></p>
-		<% end %>
-	</ol>
-<% end %>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#page-top" style="margin: -30px 0 0 -30px"><img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xft1/v/t34.0-12/11418608_920222021333765_40087412_n.jpg?oh=4f7725179c78a12541bb5ee7fbe61fa9&oe=557C973A&__gda__=1434165797_ed8d86799d365e69aabc96486cadce99" height = "90"width = "100"></a>
+            <a class="navbar-brand" href="#page-top" style="margin: 0 0 0 250px"><strong>Umbane Alert</strong></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#portfolio">More Information</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#about">About Us</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#contact">Manage Sign Up/Sign In</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-text">
+                    <span class="name">Alerts by Area Code</span>
+                    <hr class="star-light">
+                    <span class="skills">
+                    	<% if current_user %>
+												<p>Your area code is <%= current_user.areacode %></p>
+												<p>Next outage: <strong><%= @load.next_outage %></strong></p>
+												<p>Next outage period: <strong><%= @load.next_outage_period %></strong></p>
+											<% else %>
+													<% @loads.each do |ld| %>
+														<p>Area Code: <%= ld.area_code %></p>
+														<p>Next outage: <%= ld.next_outage %></p>
+														<p>Next outage period: <%= ld.next_outage_period %></p><br><br>
+													<% end %>
+											<% end %>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Portfolio Grid Section -->
+<section id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>More Information</h2>
+                <hr class="star-primary">
+            </div>
+             <div class="row">
+            <div class="col-lg-4 col-lg-offset-2">
+            		<p><strong>What is loadshedding?</strong></p>
+                <p>Load shedding is the term for when areas lose access to power for a predetermined duration of time. Due to the growing South African economy and increased demand for electricity the Eskom power stations do not have the capacity to meet this demand. Therefore, the load shedding times are planned as a way to throttle the load and share the available electricity among all customers. It is a measure of last resort to prevent the collapse of the power system, which would leave everyone without power for an extended period.</p>
+            </div>
+            <div class="col-lg-4">
+            		<p><strong>Why is it important?</strong></p>
+                <p>When load shedding occurs, people electrical supply is shut off and they cannot use their electric geysers, microwave ovens, refrigerators, lights, and TV. Since load shedding was instituted in January of 2008, many people have accepted it as a routine part of life and plan around it. There are many mobile apps that notify users when load shedding is going to occur in their area. However, many residents of Townships and low-income areas do not own smartphones. And those that do own them do not know how to utilize them to find out this information. Thus they are taken by surprise when load shedding occurs and do not plan in preparation, that is where we come in.</p>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <a href="#" class="btn btn-lg btn-outline">
+                    <i class="fa fa-download"></i> Download Theme
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="success" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>About Us</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-2">
+            		<p><strong>The Problem</strong></p>
+                <p>We embarked on our adventure to South Africa on a mission.  We wanted to learn how to code and then to utilize those skills to make a positive impact on the South African community.  During our very first night out to dinner as a group we were informed that we had to get our orders in before 8pm because that is when load shedding would occur and the restaurant would lose power. We were stunned and confused. What is load shedding? How could a whole area lose power and everyone just treats it as routine? This was admittedly a very first world approach to this serious issue. The head of our program would tell us when load shedding was and we would plan accordingly by charging our computers and getting dinner beforehand. We soon adjusted to this routine and thought that was the end of the story. However, when we visited the Khayelitsha Township and spoke to several of its residents they enlightened us to a troubling reality: many of them did not have regular access to smartphones or computers and thus did not have access to load shedding alerts. When load shedding affected their area, they were caught completely off guard. The power would just go off and they had no certainty of when they would turn back on. Load shedding is an inconvenience to most people but it is debilitating to residents of Townships. In response, we decided to utilize our newfound skills to help mitigate a very real issue for them. Our premise is very simple: instead of receiving an alert in the form of a mobile app, we disseminate our alerts through SMS.</p>
+            </div>
+            <div class="col-lg-4">
+                <p><strong>Our Solution</strong></p>
+                <p>We devised our App with our target demographic in mind and thus set out to make it as simple to use as possible. Although residents of townships do not have convenient access to web-enabled devices, they do own cellphones and regularly text. Our solution targets their normal interactions with technology notifying them via SMS. Signing up is the only portion of our process that requires access to a web-enabled device such as a smartphone or computer. The members of the Khayelitsha Township informed us that there are several communal computers for people to use and that there are enough people who own a smartphone to make this method viable. Once members sign up with their phone number, password, and area number, they will automatically begin receiving text alerts for their area. While logged in to our site, they will also be able to view this information on our homepage. Even if a user is not logged in, anyone can visit our site and view upcoming load shedding information for all areas. Our Mission is to notify residents of townships about Load Shedding in a method that is convenient for them so that they have to time to prepare for it.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Manage Sign Up/Sign In</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+              <div class="text-center">  
+                <% if user_signed_in? %>
+  								<p>Logged in as <strong><%= current_user.phonenum %></strong>.</p>
+  								<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  								<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+									<% else %>
+									<p>
+  								<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  								<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  								</p>
+  									<p>
+				  						<% if notice %>
+											  <p class="alert alert-success"><%= notice %></p>
+											<% end %>
+											<% if alert %>
+											  <p class="alert alert-danger"><%= alert %></p>
+											<% end %>
+											</p>
+  								</div>
+								<% end %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center">
+    <div class="footer-above">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col col-md-4">
+                    <h3>Contact Us</h3>
+                    <p>aryamannaik@gmail.com<br>
+                    		danny.a.low@gmail.com</p>
+                </div>
+                <div class="footer-col col-md-4">
+                <br><br>
+                    <h3>Powered By iXperience</h3>
+                    </div>
+                <div class="footer-col col-md-4">
+                    <h3>Developed By</h3>
+                    <p>Daniel Low and Aryaman Naik</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll visible-xs visible-sm">
+    <a class="btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>

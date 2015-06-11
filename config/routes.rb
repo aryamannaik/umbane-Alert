@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
   resources :welcome
-  resources :aboutus
-  resources :why
   resources :admins
 
   post '/welcome/sendtext' => 'welcome#sendtext'
