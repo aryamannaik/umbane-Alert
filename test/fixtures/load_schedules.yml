@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  area_code: MyString
+  next_outage: MyString
+  next_outage_period: MyString
+
+two:
+  area_code: MyString
+  next_outage: MyString
+  next_outage_period: MyString
