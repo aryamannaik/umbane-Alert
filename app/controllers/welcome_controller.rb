@@ -12,7 +12,7 @@ class WelcomeController < ApplicationController
 		account_sid = 'ACcc25a6efd339b0a50ad3e05051cc6187'
 		auth_token = '385586a05a54de87e704504dfbff1e11'
 		#@client = Twilio::REST::Client.new account_sid, auth_token
-		from_num = '+15005550006'
+		from_num = '+27440042342'
 		@users = User.all
 		Twilio.configure do |config|
     	config.account_sid = account_sid
