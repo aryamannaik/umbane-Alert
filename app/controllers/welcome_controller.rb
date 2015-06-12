@@ -9,10 +9,10 @@ class WelcomeController < ApplicationController
 
 
 	def sendtext
-		account_sid = 'ACb428271e365dd1f356b4c76215b03b93'
-		auth_token = '4dd873f1ead40ba3a2902918217ba51c'
+		account_sid = 'jhnhnk'
+		auth_token = 'kjnnjk'
 		#@client = Twilio::REST::Client.new account_sid, auth_token
-		from_num = '13127560601'
+		from_num = '89-0'
 		@users = User.all
 		Twilio.configure do |config|
     	config.account_sid = account_sid
