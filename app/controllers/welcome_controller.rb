@@ -27,6 +27,6 @@ class WelcomeController < ApplicationController
 			:to => user.phonenum,
 			:body => "Next Outage at: #{load.next_outage}\nNext Outage duration: #{load.next_outage_period}")
 		end
-		redirect_to welcome_index_path
+		redirect_to root_path
 	end
 end
