@@ -10,14 +10,13 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#page-top" style="margin: -30px 0 0 -30px"><img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xft1/v/t34.0-12/11418608_920222021333765_40087412_n.jpg?oh=4f7725179c78a12541bb5ee7fbe61fa9&oe=557C973A&__gda__=1434165797_ed8d86799d365e69aabc96486cadce99" height = "90"width = "100"></a>
-            <a class="navbar-brand" href="#page-top" style="margin: 0 0 0 250px"><strong>Umbane Alert</strong></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li class="hidden">
-                    <a href="#page-top"></a>
+                <li class="page-scroll">
+                    <a href="#umbane">Umbane Alert</a>
                 </li>
                 <li class="page-scroll">
                     <a href="#portfolio">More Information</a>
@@ -37,29 +36,31 @@
 
 <!-- Header -->
 <header>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="intro-text">
-                    <span class="name">Alerts by Area Code</span>
-                    <hr class="star-light">
-                    <span class="skills">
-                    	<% if current_user %>
-							<p>Your area code is <%= current_user.areacode %></p>
-							<p>Next outage: <strong><%= @load.next_outage %></strong></p>
-							<p>Next outage period: <strong><%= @load.next_outage_period %></strong></p>
-						<% else %>
-							<% @loads.each do |ld| %>
-								<p>Area Code: <%= ld.area_code %></p>
-								<p>Next outage: <%= ld.next_outage %></p>
-								<p>Next outage period: <%= ld.next_outage_period %></p><br><br>
-							<% end %>
-						<% end %>
-                    </span>
+    <section id="umbane">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+                        <span class="name">Alerts by Area Code</span>
+                        <hr class="star-light">
+                        <span class="skills">
+                        	<% if current_user %>
+    							<p>Your area code is <%= current_user.areacode %></p>
+    							<p>Next outage: <strong><%= @load.next_outage %></strong></p>
+    							<p>Next outage period: <strong><%= @load.next_outage_period %></strong></p>
+    						<% else %>
+    							<% @loads.each do |ld| %>
+    								<p>Area Code: <%= ld.area_code %></p>
+    								<p>Next outage: <%= ld.next_outage %></p>
+    								<p>Next outage period: <%= ld.next_outage_period %></p><br><br>
+    							<% end %>
+    						<% end %>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </header>
 
 <!-- Portfolio Grid Section -->
